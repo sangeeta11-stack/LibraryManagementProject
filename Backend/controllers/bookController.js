@@ -1,4 +1,4 @@
-// Backend/controllers/bookController.js
+
 const db = require('../config/db');
 
 // ✅ Get all books
