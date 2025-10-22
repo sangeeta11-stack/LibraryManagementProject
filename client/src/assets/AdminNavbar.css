@@ -1,0 +1,146 @@
+/* AdminNavbar.css */
+
+/* Variables for themes */
+:root {
+  --color-dark-bg: #1e2a38;
+  --color-dark-text: #ffffff;
+  --color-dark-accent: #00bfff;
+
+  --color-light-bg: #f8f9fa;
+  --color-light-text: #1e2a38;
+  --color-light-accent: #007bff;
+}
+
+/* Base Navbar */
+.admin-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 24px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--color-dark-bg);
+  color: var(--color-dark-text);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+/* Brand */
+.nav-left .brand {
+  font-size: 1.6rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: inherit;
+  letter-spacing: 1px;
+}
+
+.nav-left .brand:hover {
+  color: var(--color-dark-accent);
+}
+
+/* Navigation Links */
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  color: inherit;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: var(--color-dark-accent);
+}
+
+/* Action buttons */
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.nav-actions span {
+  font-weight: 500;
+}
+
+.nav-actions button {
+  padding: 6px 14px;
+  background-color: var(--color-dark-accent);
+  color: var(--color-dark-text);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.nav-actions button:hover {
+  background-color: #009acd;
+}
+
+/* Hamburger Menu for Mobile */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 4px;
+}
+
+.hamburger div {
+  width: 25px;
+  height: 3px;
+  background-color: var(--color-dark-text);
+  transition: all 0.3s ease;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background-color: var(--color-dark-bg);
+    flex-direction: column;
+    gap: 0;
+    display: none;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links a {
+    padding: 12px 24px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-actions {
+    gap: 10px;
+  }
+}
+
+/* Light Theme */
+body.light-theme .admin-navbar {
+  background-color: var(--color-light-bg);
+  color: var(--color-light-text);
+}
+
+body.light-theme .nav-links a {
+  color: var(--color-light-text);
+}
+
+body.light-theme .nav-links a:hover {
+  color: var(--color-light-accent);
+}
+
+body.light-theme .nav-actions button {
+  background-color: var(--color-light-accent);
+  color: #fff;
+}

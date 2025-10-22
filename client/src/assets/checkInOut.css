@@ -1,0 +1,7 @@
+/* checkInOut.css */
+.check-page .issue-form{display:flex;gap:12px;align-items:center;margin-bottom:18px}
+.issue-form select{width:320px;max-width:60%}
+.issue-form .btn{height:40px}
+.transactions-table .table td{vertical-align:middle}
+.transactions-table .btn{padding:6px 10px;font-size:0.9rem}
+@media (max-width:640px){ .issue-form{flex-direction:column;align-items:stretch} .issue-form select{width:100%} }

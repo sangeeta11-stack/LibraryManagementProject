@@ -1,0 +1,16 @@
+/* dashboard.css */
+.dashboard-hero{
+  display:flex;gap:20px;align-items:center;justify-content:space-between;margin-bottom:20px;
+}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+@media (max-width: 1100px){ .stats-grid{grid-template-columns:repeat(2,1fr)} }
+@media (max-width: 640px){ .stats-grid{grid-template-columns:1fr} }
+
+.stat{
+  padding:16px;border-radius:12px;background:linear-gradient(180deg,var(--card),rgba(255,255,255,0.02));
+  display:flex;align-items:center;justify-content:space-between;gap:12px;box-shadow:var(--shadow)
+}
+.stat .label{font-weight:600;color:var(--muted)}
+.stat .value{font-size:1.25rem;font-weight:700;color:var(--text)}
+.card-section{margin-top:18px}
+.card-actions{display:flex;gap:10px}
