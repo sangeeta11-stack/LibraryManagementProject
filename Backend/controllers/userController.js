@@ -1,4 +1,3 @@
-// Backend/controllers/userController.js
 const db = require('../config/db');
 
 exports.getAllStudents = (req, res) => {

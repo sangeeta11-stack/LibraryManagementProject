@@ -1,4 +1,3 @@
-// Backend/controllers/transactionController.js
 const db = require('../config/db');
 
 const FINE_PER_DAY = 10; // ₹10/day
