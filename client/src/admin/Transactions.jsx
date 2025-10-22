@@ -18,7 +18,7 @@ const Transactions = () => {
     if (!token) return;
 
     try {
-      const res = await axios.get('http://localhost:5000/api/transactions/admin/transactions', {
+      const res = await axios.get('https://librarymanagementproject-69df.onrender.com/api/transactions/admin/transactions', {
         headers: { Authorization: `Bearer ${token}` }
       });
 

@@ -1,4 +1,3 @@
-// client/src/components/CheckInOut.jsx
 import React, { useEffect, useState, useContext } from 'react';
 import axios from 'axios';
 import Navbar from './Navbar';
@@ -14,11 +13,11 @@ const CheckInOut = () => {
   useEffect(() => {
     if (!token) return;
 
-    axios.get('http://localhost:5000/api/books', { headers: { Authorization: `Bearer ${token}` } })
+    axios.get('https://librarymanagementproject-69df.onrender.com/api/books', { headers: { Authorization: `Bearer ${token}` } })
       .then(res => setBooks(res.data))
       .catch(err => console.error(err));
 
-    axios.get('http://localhost:5000/api/transactions', { headers: { Authorization: `Bearer ${token}` } })
+    axios.get('https://librarymanagementproject-69df.onrender.com/api/transactions', { headers: { Authorization: `Bearer ${token}` } })
       .then(res => setTransactions(res.data))
       .catch(err => console.error(err));
   }, [token]);
@@ -28,7 +27,7 @@ const CheckInOut = () => {
     if (!userId) return alert('User ID missing (login again)');
 
     try {
-      const res = await axios.post('http://localhost:5000/api/transactions/issue', {
+      const res = await axios.post('https://librarymanagementproject-69df.onrender.com/api/transactions/issue', {
         // We send only user_id and book_id; backend will read name/email from DB using user_id
         user_id: parseInt(userId),
         book_id: parseInt(selectedBook)
@@ -60,7 +59,7 @@ const CheckInOut = () => {
   const handleReturn = async (tx) => {
     if (!tx || !tx.id) return;
     try {
-      const res = await axios.post('http://localhost:5000/api/transactions/return', {
+      const res = await axios.post('https://librarymanagementproject-69df.onrender.com/api/transactions/return', {
         transaction_id: tx.id
       }, { headers: { Authorization: `Bearer ${token}` } });
 

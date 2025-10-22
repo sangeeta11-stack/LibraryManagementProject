@@ -14,7 +14,7 @@ const Renew = () => {
     if (!token) return;
     try {
       setLoading(true);
-      const res = await axios.get('http://localhost:5000/api/transactions', {
+      const res = await axios.get('https://librarymanagementproject-69df.onrender.com/api/transactions', {
         headers: { Authorization: `Bearer ${token}` },
       });
       const activeBooks = res.data.filter(t => t.status === 'issued');
@@ -40,7 +40,7 @@ const Renew = () => {
 
     try {
       const res = await axios.post(
-        'http://localhost:5000/api/transactions/renew',
+        'https://librarymanagementproject-69df.onrender.com/api/transactions/renew',
         { transaction_id: transactionId },
         { headers: { Authorization: `Bearer ${token}` } }
       );

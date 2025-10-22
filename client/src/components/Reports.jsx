@@ -1,4 +1,3 @@
-// client/src/components/Reports.jsx
 import React, { useEffect, useState, useContext } from 'react';
 import Navbar from './Navbar';
 import axios from 'axios';
@@ -41,11 +40,11 @@ const Reports = () => {
         }
 
         const [booksRes, txRes, renewRes, overdueRes, finesRes] = await Promise.all([
-          axios.get('http://localhost:5000/api/reports/books', { headers: { Authorization: `Bearer ${token}` } }),
-          axios.get('http://localhost:5000/api/reports/transactions', { headers: { Authorization: `Bearer ${token}` } }),
-          axios.get('http://localhost:5000/api/reports/renewals', { headers: { Authorization: `Bearer ${token}` } }),
-          axios.get('http://localhost:5000/api/reports/overdue', { headers: { Authorization: `Bearer ${token}` } }),
-          axios.get('http://localhost:5000/api/reports/fines', { headers: { Authorization: `Bearer ${token}` } }),
+          axios.get('https://librarymanagementproject-69df.onrender.com/api/reports/books', { headers: { Authorization: `Bearer ${token}` } }),
+          axios.get('https://librarymanagementproject-69df.onrender.com/api/reports/transactions', { headers: { Authorization: `Bearer ${token}` } }),
+          axios.get('https://librarymanagementproject-69df.onrender.com/api/reports/renewals', { headers: { Authorization: `Bearer ${token}` } }),
+          axios.get('https://librarymanagementproject-69df.onrender.com/api/reports/overdue', { headers: { Authorization: `Bearer ${token}` } }),
+          axios.get('https://librarymanagementproject-69df.onrender.com/api/reports/fines', { headers: { Authorization: `Bearer ${token}` } }),
         ]);
 
         setBooksReport(booksRes.data || {});

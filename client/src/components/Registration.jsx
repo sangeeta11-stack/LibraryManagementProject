@@ -13,7 +13,7 @@ const Registration = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:5000/api/auth/register', {
+      await axios.post('https://librarymanagementproject-69df.onrender.com/api/auth/register', {
         name, email, password, role: 'student'
       });
 

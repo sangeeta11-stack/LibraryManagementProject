@@ -9,7 +9,7 @@ const BookList = () => {
   const [books, setBooks] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/books', { headers: { Authorization: `Bearer ${token}` } })
+    axios.get('https://librarymanagementproject-69df.onrender.com/api/books', { headers: { Authorization: `Bearer ${token}` } })
       .then(res => setBooks(res.data))
       .catch(err => console.log(err));
   }, [token]);

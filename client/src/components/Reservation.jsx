@@ -1,4 +1,3 @@
-// client/src/components/Reservation.jsx
 import React, { useEffect, useState, useContext } from 'react';
 import axios from 'axios';
 import Navbar from './Navbar';
@@ -24,7 +23,7 @@ const Reservation = () => {
 
   const fetchBooks = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/books', { headers: { Authorization: `Bearer ${token}` } });
+      const res = await axios.get('https://librarymanagementproject-69df.onrender.com/api/books', { headers: { Authorization: `Bearer ${token}` } });
       setBooks(res.data);
     } catch (err) {
       console.error(err);

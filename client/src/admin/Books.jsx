@@ -13,7 +13,7 @@ const Books = () => {
   // Fetch all books
   const fetchBooks = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/books', {
+      const res = await axios.get('https://librarymanagementproject-69df.onrender.com/api/books', {
         headers: { Authorization: `Bearer ${token}` }
       });
       setBooks(res.data);
@@ -43,12 +43,12 @@ const Books = () => {
 
     try {
       if (editId) {
-        await axios.put(`http://localhost:5000/api/books/${editId}`, form, {
+        await axios.put(`https://librarymanagementproject-69df.onrender.com/api/books/${editId}`, form, {
           headers: { Authorization: `Bearer ${token}` }
         });
         alert('Book updated successfully!');
       } else {
-        await axios.post('http://localhost:5000/api/books', form, {
+        await axios.post('https://librarymanagementproject-69df.onrender.com/api/books', form, {
           headers: { Authorization: `Bearer ${token}` }
         });
         alert('Book added successfully!');
@@ -77,7 +77,7 @@ const Books = () => {
   const handleDelete = async id => {
     if (!window.confirm('Are you sure you want to delete this book?')) return;
     try {
-      await axios.delete(`http://localhost:5000/api/books/${id}`, {
+      await axios.delete(`https://librarymanagementproject-69df.onrender.com/api/books/${id}`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       alert('Book deleted successfully!');

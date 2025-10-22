@@ -1,4 +1,3 @@
-// client/src/components/Transactions.jsx
 import React, { useEffect, useState, useContext } from 'react';
 import axios from 'axios';
 import Navbar from './Navbar';
@@ -13,7 +12,7 @@ const Transactions = () => {
 
   useEffect(() => {
     if (!token) return;
-    const url = role === 'admin' ? 'http://localhost:5000/api/transactions/all' : 'http://localhost:5000/api/transactions';
+    const url = role === 'admin' ? 'https://librarymanagementproject-69df.onrender.com/api/transactions/all' : 'https://librarymanagementproject-69df.onrender.com/api/transactions';
     axios.get(url, { headers: { Authorization: `Bearer ${token}` } })
       .then(res => setTransactions(res.data))
       .catch(err => console.error(err))
