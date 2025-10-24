@@ -1,4 +1,3 @@
-// Backend/routes/reports.js
 const express = require('express');
 const router = express.Router();
 const rpt = require('../controllers/reportController');

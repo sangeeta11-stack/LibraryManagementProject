@@ -1,4 +1,3 @@
-// Backend/routes/reservations.js
 const express = require('express');
 const router = express.Router();
 const rc = require('../controllers/reservationController');

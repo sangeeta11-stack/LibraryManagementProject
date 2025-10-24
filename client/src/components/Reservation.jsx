@@ -32,7 +32,7 @@ const Reservation = () => {
 
   const fetchReservations = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/reservations/my', { headers: { Authorization: `Bearer ${token}` } });
+      const res = await axios.get('https://librarymanagementproject-69df.onrender.com/api/reservations/my', { headers: { Authorization: `Bearer ${token}` } });
       setMyReservations(res.data);
     } catch (err) {
       console.error(err);
@@ -47,7 +47,7 @@ const Reservation = () => {
 
     setLoading(true);
     try {
-      const res = await axios.post('http://localhost:5000/api/reservations/reserve', {
+      const res = await axios.post('https://librarymanagementproject-69df.onrender.com/api/reservations/reserve', {
         book_id: parseInt(selectedBook),
         reservation_date: reservationDate
       }, { headers: { Authorization: `Bearer ${token}` } });
@@ -67,7 +67,7 @@ const Reservation = () => {
   const handleCancel = async (reservationId) => {
     if (!window.confirm('Cancel this reservation?')) return;
     try {
-      await axios.post('http://localhost:5000/api/reservations/cancel', { reservation_id: reservationId }, { headers: { Authorization: `Bearer ${token}` } });
+      await axios.post('https://librarymanagementproject-69df.onrender.com/api/reservations/cancel', { reservation_id: reservationId }, { headers: { Authorization: `Bearer ${token}` } });
       setMyReservations(prev => prev.filter(r => r.id !== reservationId));
     } catch (err) {
       console.error(err);
@@ -91,7 +91,7 @@ const Reservation = () => {
     if (renewDate < today) return alert('New reservation date cannot be in the past');
 
     try {
-      const res = await axios.post('http://localhost:5000/api/reservations/renew', {
+      const res = await axios.post('https://librarymanagementproject-69df.onrender.com/api/reservations/renew', {
         reservation_id: renewTarget.id,
         new_date: renewDate
       }, { headers: { Authorization: `Bearer ${token}` } });

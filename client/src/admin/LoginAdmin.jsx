@@ -21,7 +21,7 @@ const LoginAdmin = () => {
 
     try {
       // Send login request to backend
-      const res = await axios.post('http://localhost:5000/api/auth/login', {
+      const res = await axios.post('https://librarymanagementproject-69df.onrender.com/api/auth/login', {
         email,
         password,
         role: 'admin'

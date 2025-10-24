@@ -1,4 +1,3 @@
-// Backend/models/transaction.js
 const db = require('../config/db');
 
 class Transaction {

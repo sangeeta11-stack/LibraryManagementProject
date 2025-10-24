@@ -1,4 +1,3 @@
-// client/src/components/MainPage.jsx
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../assets/mainpage.css'; // optional for styling
