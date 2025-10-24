@@ -1,7 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const dotenv = require('dotenv');
-const path = require('path');
+
 dotenv.config();
 
 const db = require('./config/db');
@@ -12,7 +12,7 @@ const reservationRoutes = require('./routes/reservations');
 const adminRoutes = require('./routes/admin');
 
 const app = express();
-
+const path = require('path');
 app.use(express.static(path.join(__dirname, '../client/build')));
 
 app.get('*', (req, res) => {

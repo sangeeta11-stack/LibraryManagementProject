@@ -1,14 +1,12 @@
 {
-  "name": "library-management",
+  "name": "library-management-backend",
   "version": "1.0.0",
   "description": "Library Management System Backend",
   "main": "app.js",
- "scripts": {
-  "start": "node app.js",
-  "build-client": "cd ../client && npm install && npm run build"
-},
-  "author": "Your Name",
-  "license": "ISC",
+  "scripts": {
+    "start": "node app.js",
+    "build-client": "cd ../client && npm install && npm run build"
+  },
   "dependencies": {
     "bcrypt": "^5.1.1",
     "bcryptjs": "^3.0.2",
