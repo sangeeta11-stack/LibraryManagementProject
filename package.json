@@ -2,9 +2,10 @@
   "devDependencies": {
     "concurrently": "^9.2.1"
   },
- "scripts": {
-  "start": "node app.js",
-  "build-client": "cd ../client && npm install && npm run build"
+  "scripts": {
+  "client": "npm start --prefix client",
+  "server": "npm run dev --prefix Backend",
+  "dev": "concurrently \"npm run server\" \"npm run client\""
 }
 
 }

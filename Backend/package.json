@@ -3,11 +3,10 @@
   "version": "1.0.0",
   "description": "Library Management System Backend",
   "main": "app.js",
-  "scripts": {
-    "start": "node app.js",
-    "dev": "nodemon app.js",
-    "seed": "node utils/seedStaff.js"
-  },
+ "scripts": {
+  "start": "node app.js",
+  "build-client": "cd ../client && npm install && npm run build"
+},
   "author": "Your Name",
   "license": "ISC",
   "dependencies": {
